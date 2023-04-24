@@ -6,7 +6,7 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        private double ope1 = 0, ope2 = 0, result = 0,resulta=0;
+        private double ope1 = 0, ope2 = 0, result = 0, resulta = 0;
         private string signo = "default";
         private bool even = false;
         public Form1()
@@ -43,9 +43,9 @@ namespace WinFormsApp1
         //de esto que el usuario puede hacer varias operaciones como cambiarlas. Ejemplo: 3+3+4-5-6.
         private void secuencia()
         {
-                variable2();
-                operacion();
-                DisplayText.Text = "0";
+            variable2();
+            operacion();
+            DisplayText.Text = "0";
 
         }
 
@@ -104,14 +104,16 @@ namespace WinFormsApp1
                 case "%":
                     ope1 = ope1 * 100;
                     DisplayText.Text = ope1.ToString();
+                    signo = "default";
                     return;
                 case "1/x":
                     ope1 = 1 / ope1;
-                    DisplayText.Text = ope1.ToString(); 
+                    DisplayText.Text = ope1.ToString();
+                    signo = "default";
                     return;
             }
             ope1 = result;
-            DisplayText.Text=result.ToString();
+            DisplayText.Text = result.ToString();
         }
         //Se utiliza el concatenar los elemento agregando al display el número correspondiente 
         //Se inicia con "0" en el display por lo que se hará una función que pueda reemplazar ese 0 de inicio
@@ -271,7 +273,7 @@ namespace WinFormsApp1
         //la operación de acuerdo al caso de "signo" que este es "="
         private void button14_Click(object sender, EventArgs e)
         {
-            if (even==false)
+            if (even == false)
             {
                 variable2();
                 operacion();
